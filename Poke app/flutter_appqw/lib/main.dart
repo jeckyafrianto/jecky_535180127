@@ -40,13 +40,15 @@ class HomePageState extends State<HomePage> {
     setState(() {});
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text("Poke App"),
         backgroundColor: Colors.yellow,
+          actions: <Widget>[
+          IconButton(icon: Icon(Icons.search), onPressed: (){})
+      ],
       ),
       body: pokeHub == null? Center(
             child: CircularProgressIndicator(),
@@ -93,12 +95,9 @@ class HomePageState extends State<HomePage> {
 
 
       drawer: Drawer(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: Colors.yellow,
-        child: Icon(Icons.refresh),
-      ),
 
     );
   }
+ 
 }
+
